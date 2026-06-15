@@ -1,0 +1,27 @@
+{% extends 'sdetails/base.html' %}
+
+{% block content %}
+
+<h1>Courses</h1>
+
+<ul>
+    {% for course in courses %}
+        <li>
+            <a href="{% url 'student_list' course.id %}">
+                {{ course.name }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'register_student' %}">
+    Register Student
+</a>
+
+<br><br>
+
+<a href="{% url 'register_course' %}">
+    Register Course
+</a>
+
+{% endblock %}
